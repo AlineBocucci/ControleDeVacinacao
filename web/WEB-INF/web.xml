@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <!-- FILTROS -->
+    <!--FILTRO   AcessoAdministrativo-->
+    <filter>
+        <filter-name>AcessoAdministrativo</filter-name>
+        <filter-class>AutorizacaoDeAcesso.AcessoAdministrativo</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AcessoAdministrativo</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+    <!--FILTRO   AcessoLogado-->
+    <filter>
+        <filter-name>AcessoLogado</filter-name>
+        <filter-class>AutorizacaoDeAcesso.AcessoLogado</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AcessoLogado</filter-name>
+        <url-pattern>/principal.jsp</url-pattern>
+    </filter-mapping>
+    <!-- SERVLETS -->
+    <!--SERVLET   ControleAcesso -->
+    <servlet>
+        <servlet-name>ControleAcesso</servlet-name>
+        <servlet-class>controller.ControleAcesso</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MarcasController</servlet-name>
+        <servlet-class>controller.MarcasController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Idioma</servlet-name>
+        <servlet-class>controller.Idioma</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VacinasController</servlet-name>
+        <servlet-class>controller.VacinasController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControleAcesso</servlet-name>
+        <url-pattern>/ControleAcesso</url-pattern>
+    </servlet-mapping>
+    <!--SERVLET   ControleUsuario -->
+    <servlet>
+        <servlet-name>ControleUsuario</servlet-name>
+        <servlet-class>controller.ControleUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControleUsuario</servlet-name>
+        <url-pattern>/ControleUsuario</url-pattern>
+    </servlet-mapping>
+    <!-- Kaptcha-->
+    <servlet>
+        <servlet-name>Kaptcha</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Kaptcha</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MarcasController</servlet-name>
+        <url-pattern>/marcasController</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>util.mensagens</param-value>
+    </context-param>
+    <servlet-mapping>
+        <servlet-name>Idioma</servlet-name>
+        <url-pattern>/Idioma</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VacinasController</servlet-name>
+        <url-pattern>/VacinasController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
