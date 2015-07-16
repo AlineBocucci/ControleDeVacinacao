@@ -37,10 +37,13 @@
         <servlet-name>VacinasController</servlet-name>
         <servlet-class>controller.VacinasController</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>PacienteController</servlet-name>
         <servlet-class>controller.PacienteController</servlet-class>
     </servlet>
+=======
+>>>>>>> origin/master
     <servlet-mapping>
         <servlet-name>ControleAcesso</servlet-name>
         <url-pattern>/ControleAcesso</url-pattern>
@@ -79,10 +82,13 @@
         <servlet-name>VacinasController</servlet-name>
         <url-pattern>/VacinasController</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>PacienteController</servlet-name>
         <url-pattern>/PacienteController</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> origin/master
     <session-config>
         <session-timeout>
             30
